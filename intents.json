@@ -1,0 +1,48 @@
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi", "Hey", "Is anyone there?", "Hie","Hello", "Hay"],
+     "responses": ["Hello", "Hi", "Hi there"]
+    },
+    {"tag": "goodbye",
+     "patterns": ["Bye", "See you later", "Goodbye"],
+     "responses": ["See you later", "Have a nice day", "Bye! Come back again"]
+    },
+    {"tag": "thanks",
+     "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks for the help"],
+     "responses": ["Happy to help!", "Any time!", "My pleasure", "You're most welcome!"]
+    },
+    {"tag": "about",
+     "patterns": ["Who are you?", "What are you?", "Who you are?" ],
+     "responses": ["I.m TechBot, your bot assistant", "I'm TechBot, an Artificial Intelligent bot"]
+    },
+    {"tag": "name",
+    "patterns": ["what is your name", "what should I call you", "whats your name?"],
+    "responses": ["You can call me TechBot.", "I'm TechBot!", "Just call me as TechBot"]
+    },
+    {"tag": "help",
+    "patterns": ["Could you help me?", "give me a hand please", "Can you help?", "What can you do for me?", "I need a support", "I need a help", "support me please"],
+    "responses": ["Tell me how can assist you", "Tell me your problem to assist you", "Yes Sure, How can I support you"]
+    },
+    {"tag": "thanks",
+    "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+    "responses": ["Happy to help!", "Any time!", "My pleasure"],
+    "context": [""]
+    },
+    {"tag": "Hospital",
+    "patterns": ["Hospital","Show me Hospital","Nearby Hospitals","Hospitals","Hospital","Show me Hospital","Nearby Hospitals","Hospitals"],
+    "responses": ["https://www.google.com/maps/search/heart+hospital+near+me"],
+    "context": [""]
+    },
+     {"tag": "Hospital",
+    "patterns": ["Hospital","Show me Hospital","Nearby Hospitals","Hospitals","Hospital","Show me Hospital","Nearby Hospitals","Hospitals"],
+    "responses": ["https://www.google.com/maps/search/heart+hospital+near+me"],
+    "context": [""]
+    },
+    {"tag": "Causes",
+    "patterns": ["What are the causes of heart failure","Symptoms","Heart failure symptoms","heart failure reasons","What are the causes of heart failure","Symptoms","Heart failure symptoms","heart failure reasons"],
+    "responses": ["Shortness of breath with activity or when lying down.Fatigue and weakness.Swelling in the legs ankles and feet.Rapid or irregular heartbeat.Reduced ability to exercise.A cough that doesn't go away or a cough that brings up white or pink mucus with spots of blood.Swelling of the belly areaDifficulty concentrating or decreased alertness","Shortness of breath with activity or when lying down.Fatigue and weakness.Swelling in the legs, ankles and feet.Rapid or irregular heartbeat.Reduced ability to exercise.A cough that doesn't go away or a cough that brings up white or pink mucus with spots of blood.Swelling of the belly areaDifficulty concentrating or decreased alertness","Shortness of breath with activity or when lying down.Fatigue and weakness.Swelling in the legs, ankles and feet.Rapid or irregular heartbeat.Reduced ability to exercise.A cough that doesn't go away or a cough that brings up white or pink mucus with spots of blood.Swelling of the belly areaDifficulty concentrating or decreased alertness"],
+    "context": [""]
+    }
+
+        ]
+}

@@ -1,0 +1,189 @@
+{% extends 'Base.html'%}
+{% block content%}
+{% if messages %}
+
+{% for message in messages %}
+{% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+{% endfor %}
+
+{% endif %}
+{%load static%}
+<style>
+        .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.box > div { /*The > denotes only the first or immediate child will be affected*/
+  width: 1300px;
+  height: auto;
+  /*border: dotted;
+*/
+  background-color: orange;
+  border-radius: 5px
+}
+
+.box > div label{
+    color: white;
+}
+
+        .box1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box1 > div { /*The > denotes only the first or immediate child will be affected*/
+  width: 1300px;
+  height: auto;
+  /*border: dotted;
+*/
+  background-color: #FFC000;
+  border-radius: 5px
+}
+
+.box1 > div label{
+    color: black;
+}
+
+
+</style>
+
+<div style="background-image:  url('/media/.jpg'); background-repeat:no-repeat;background-size:cover;  height:650px; width:100%;">
+    <div class="box">
+        <div class="shadow-lg p-3 mb-5 ">
+             <center><h1 style="color: white;">Prediction</h1></center> 
+             <hr>
+             <form method="POST" action="/Prediction/" enctype="multipart/form-data" style="padding:25px;">
+                {% csrf_token %}
+           
+
+            <div class="row">
+              <div class="col-md-8">
+                <div class="box1">
+                  <div class="shadow-lg p-3 mb-5 " >
+
+                    <div class="row">
+                      <div class="mb-3 col-md-6"> 
+                        <label class="form-label">Age</label>
+                        <input type="number" min="1" name="age" class="form-control">
+                      </div>
+                      <div class="mb-3 col-md-6"> 
+                        <label class="form-label">Sex</label>
+                        <select name="Sex" class="form-select">
+                          <option selected>Select Sex</option>
+                          <option value="1">Male</option>
+                          <option value="0">Female</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="mb-3 col-md-12">
+                        <label class="form-label">Chest Pain</label>
+                        <select name="ChestPain" class="form-select">
+                          <option selected>Select Chest Pain Type</option>
+                          <option value="0">ASY</option>
+                          <option value="1">ATA</option>
+                          <option value="2">NAP</option>
+                          <option value="3">TA</option>
+                        </select>
+                        <br>
+                        <h5 style="background-color: white;border-radius: 2px;">[TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal Pain, ASY: Asymptomatic]</h5>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="mb-3 col-md-6"> 
+                        <label class="form-label">Cholestrol</label>
+                        <input type="number" min="1" name="Cholestrol" class="form-control">
+                      </div>
+                      <div class="mb-3 col-md-6"> 
+                        <label class="form-label">Fasting Bs(fasting blood sugar)</label>
+                        <select name="fasting_bs" class="form-select">
+                          <option selected>Select</option>
+                          <option value="1">If FastingBS is more than 120 mg/dl</option>
+                          <option value="0">If FastingBS is less than 120 mg/dl</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      
+                      <div class="mb-3 col-md-6"> 
+                        <label class="form-label">Resting ECG</label>
+                        <select name="RestingEcg" class="form-select">
+                          <option selected>Select</option>
+                          <option value="0">LVH</option>
+                          <option value="1">Normal</option>
+                          <option value="2">ST</option>
+                        </select>
+                        <p>◘Normal: Normal</p>
+                        <p>◘ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV)</p>
+                        <p>◘ LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]</p>
+                      </div>
+
+                      <div class="mb-3 col-md-6"> 
+                        <label class="form-label">MaxHR</label>
+                        <input type="number" min="1" name="MaxHR" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      
+                      <div class="mb-3 col-md-6"> 
+                        <label class="form-label">Exercise Angina</label>
+                        <select name="exercise_angina" class="form-select">
+                          <option selected>Select</option>
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3 col-md-6"> 
+                        <label class="form-label">Oldpeak</label>
+                        <input type="number" min="0" step="0.1"  name="oldpeak" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="mb-3 col-md-6"> 
+                        <label class="form-label">St Slope</label>
+                        <select name="slope" class="form-select">
+                          <option selected>Select</option>
+                          <option value="0">Down</option>
+                          <option value="1">Flat</option>
+                          <option value="2">Up</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3 col-md-6">
+                        <label class="form-label">Resting BP</label>
+                        <input class="form-control" type="number" name="restingBP" min="1">
+                      </div>
+                    </div>
+
+                    <div class="mb-3 col-md-12">
+                      <div style="display:flex;justify-content: center;align-items: center;" class="row">
+                        <input style="width:50%;" type="submit" class="btn btn-secondary" name="">
+                      </div>
+                    </div>
+
+                     </form> 
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <video style="width:100%;" controls autoplay loop>
+                  <source src="/media/Beat.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
